@@ -38,7 +38,7 @@ class CrimesController < ApplicationController
     @crime.destroy
   end
   def oregon
-    render json: Arrest.find_crimes(params[:state_id]) 
+    render json: Arrest.find_crimes(params[:state_id],params[:crime_id]) 
   end
 
   private
