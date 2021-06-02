@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/crimes/data/:state_id/:crime_id", to: "crimes#oregon"
   resources :states
   resources :arrests
   resources :categories
