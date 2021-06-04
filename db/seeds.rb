@@ -44,8 +44,8 @@ states.each.with_index do |state,si|
         arrests = JSON.parse(File.read("db/data_files/#{state}_#{crime}.json"))
         arrests["results"].each do |arrest_item|
             total= arrest_item["male_count"].to_i + arrest_item["female_count"].to_i
-            Arrest.create(state_id: si , 
-                            crime_id: ci, 
+            Arrest.create(state_id: si + 1 , 
+                            crime_id: ci + 1, 
                             total_arrests: total.to_i, 
                             male_arrests: arrest_item["male_count"].to_i, 
                             female_arrests: arrest_item["female_count"].to_i, 
