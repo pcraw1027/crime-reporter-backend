@@ -5,6 +5,8 @@ ruby '2.6.1'
 
 gem 'rack-cors'
 
+
+
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

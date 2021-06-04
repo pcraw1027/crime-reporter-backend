@@ -35,278 +35,297 @@ o7 = Crime.create(name: "drug-sales-synthetic", category: c2)
 o8 = Crime.create(name: "drug-sales-other", category: c2)
 
 #Arrests data setup
+states = ["OR","AR","IA","KS","CO"]
+crimes = ["drug-possession-marijuana","drug-possession-opium","drug-possession-synthetic","drug-possession-other","drug-sales-marijuana","drug-sales-opium","drug-sales-synthetic","drug-sales-other"]
 
-# Oregon
-arrests = JSON.parse(File.read('db/data_files/OR_dpm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o1, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
+states.each.with_index do |state,si|
+    crimes.each.with_index do |crime,ci| 
+       
+        arrests = JSON.parse(File.read("db/data_files/#{state}_#{crime}.json"))
+        arrests["results"].each do |arrest_item|
+            total= arrest_item["male_count"].to_i + arrest_item["female_count"].to_i
+            Arrest.create(state_id: si , 
+                            crime_id: ci, 
+                            total_arrests: total.to_i, 
+                            male_arrests: arrest_item["male_count"].to_i, 
+                            female_arrests: arrest_item["female_count"].to_i, 
+                            year: arrest_item["data_year"].to_i)
+             
+        end
+    end
 end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dpo.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o2, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# # Oregon
+# arrests = JSON.parse(File.read('db/data_files/OR_dpm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o1, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dps.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o3, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dpo.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o2, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dpot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o4, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dps.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o3, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dsm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o5, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dpot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o4, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dso.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o6, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dsm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o5, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dss.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o7, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dso.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o6, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/OR_dsot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s1, 
-                    crime: o8, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dss.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o7, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-# Arkansas - AR
-arrests = JSON.parse(File.read('db/data_files/AR_dpm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o1, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/OR_dsot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s1, 
+#                     crime: o8, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dpo.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o2, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# # Arkansas - AR
+# arrests = JSON.parse(File.read('db/data_files/AR_dpm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o1, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dps.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o3, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dpo.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o2, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dpot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o4, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dps.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o3, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dsm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o5, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dpot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o4, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dso.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o6, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dsm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o5, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dss.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o7, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dso.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o6, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/AR_dsot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s2, 
-                    crime: o8, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/AR_dss.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o7, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-# Iowa - IA
+# arrests = JSON.parse(File.read('db/data_files/AR_dsot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s2, 
+#                     crime: o8, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
+
+# # Iowa - IA
 
 
 
-# Kansas - KS
+# # Kansas - KS
 
 
 
-# Colorado - CO
-arrests = JSON.parse(File.read('db/data_files/CO_dpm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o1, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# # Colorado - CO
+# arrests = JSON.parse(File.read('db/data_files/CO_dpm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o1, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dpo.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o2, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dpo.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o2, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dps.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o3, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dps.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o3, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dpot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o4, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dpot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o4, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dsm.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o5, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dsm.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o5, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dso.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o6, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dso.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o6, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dss.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o7, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dss.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o7, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
 
-arrests = JSON.parse(File.read('db/data_files/CO_dsot.json'))
-arrests.each do |arrest_item|
-    total_arr = arrest_item["male_count"] + arrest_item["female_count"]
-    Arrest.create(state: s5, 
-                    crime: o8, 
-                    total_arrests: total_arr, 
-                    male_arrests: arrest_item["male_count"], 
-                    female_arrests: arrest_item["female_count"], 
-                    year: arrest_item["data_year"])
-end
+# arrests = JSON.parse(File.read('db/data_files/CO_dsot.json'))
+# arrests.each do |arrest_item|
+#     total_arr = arrest_item["male_count"] + arrest_item["female_count"]
+#     Arrest.create(state: s5, 
+#                     crime: o8, 
+#                     total_arrests: total_arr, 
+#                     male_arrests: arrest_item["male_count"], 
+#                     female_arrests: arrest_item["female_count"], 
+#                     year: arrest_item["data_year"])
+# end
