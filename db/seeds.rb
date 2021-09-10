@@ -19,6 +19,8 @@ s2 = State.create(abbreviation: "AR", name: "Arkansas", population: 2922500, fem
 s3 = State.create(abbreviation: "IA", name: "Iowa", population: 3060200, female_population: 1546700, male_population: 1513500)
 s4 = State.create(abbreviation: "KS", name: "Kansas", population: 2811200, female_population: 1432600, male_population: 1378600)
 s5 = State.create(abbreviation: "CO", name: "Colorado", population: 5611800, female_population: 2802100, male_population: 2809700)
+State.create(abbreviation: "NJ", name: "New Jersey", population: 8820000, female_population: 2802100, male_population: 2809700)
+State.create(abbreviation: "NY", name: "New York", population: 20201249, female_population: 2802100, male_population: 2809700)
 
 #Categories data setup
 c1 = Category.create(name: "Possession") 
@@ -35,7 +37,7 @@ o7 = Crime.create(name: "drug-sales-synthetic", category: c2)
 o8 = Crime.create(name: "drug-sales-other", category: c2)
 
 #Arrests data setup
-states = ["OR","AR","IA","KS","CO"]
+states = ["OR","AR","IA","KS","CO","NJ","NY"]
 crimes = ["drug-possession-marijuana","drug-possession-opium","drug-possession-synthetic","drug-possession-other","drug-sales-marijuana","drug-sales-opium","drug-sales-synthetic","drug-sales-other"]
 
 states.each.with_index do |state,si|
@@ -44,6 +46,10 @@ states.each.with_index do |state,si|
         arrests = JSON.parse(File.read("db/data_files/#{state}_#{crime}.json"))
         arrests["results"].each do |arrest_item|
             total= arrest_item["male_count"].to_i + arrest_item["female_count"].to_i
+           
+           
+           
+           
             Arrest.create(state_id: si + 1 , 
                             crime_id: ci + 1, 
                             total_arrests: total.to_i, 
