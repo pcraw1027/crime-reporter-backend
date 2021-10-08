@@ -1,0 +1,33 @@
+{
+  "results" : [ {
+    "male_count" : 17,
+    "female_count" : 10,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2015
+  }, {
+    "male_count" : 3,
+    "female_count" : 1,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2016
+  }, {
+    "male_count" : 7,
+    "female_count" : 0,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2017
+  }, {
+    "male_count" : 5,
+    "female_count" : 3,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2019
+  } ],
+  "pagination" : {
+    "count" : 4,
+    "page" : 0,
+    "pages" : 1,
+    "per_page" : 0
+  }
+}

@@ -1,73 +1,73 @@
 {
   "results" : [ {
-    "male_count" : 5954,
-    "female_count" : 982,
+    "male_count" : 5561,
+    "female_count" : 916,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1995
   }, {
-    "male_count" : 7893,
-    "female_count" : 1289,
+    "male_count" : 6623,
+    "female_count" : 1062,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1996
   }, {
-    "male_count" : 7994,
-    "female_count" : 1529,
+    "male_count" : 7951,
+    "female_count" : 1517,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1997
   }, {
-    "male_count" : 7098,
-    "female_count" : 1225,
+    "male_count" : 7045,
+    "female_count" : 1216,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1998
   }, {
-    "male_count" : 8422,
+    "male_count" : 8421,
     "female_count" : 1559,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1999
   }, {
-    "male_count" : 8216,
-    "female_count" : 1475,
+    "male_count" : 8177,
+    "female_count" : 1466,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2000
   }, {
-    "male_count" : 8447,
-    "female_count" : 1588,
+    "male_count" : 8096,
+    "female_count" : 1530,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2001
   }, {
-    "male_count" : 7209,
-    "female_count" : 1467,
+    "male_count" : 7196,
+    "female_count" : 1465,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2002
   }, {
-    "male_count" : 7563,
-    "female_count" : 1565,
+    "male_count" : 7556,
+    "female_count" : 1564,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2003
   }, {
-    "male_count" : 8424,
-    "female_count" : 1812,
+    "male_count" : 8038,
+    "female_count" : 1732,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2004
   }, {
-    "male_count" : 8647,
-    "female_count" : 1847,
+    "male_count" : 8586,
+    "female_count" : 1831,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2005
   }, {
-    "male_count" : 8545,
-    "female_count" : 1874,
+    "male_count" : 8512,
+    "female_count" : 1862,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2006
@@ -78,26 +78,26 @@
     "csv_header" : null,
     "data_year" : 2007
   }, {
-    "male_count" : 9133,
-    "female_count" : 1956,
+    "male_count" : 9118,
+    "female_count" : 1954,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2008
   }, {
-    "male_count" : 8835,
-    "female_count" : 1766,
+    "male_count" : 8671,
+    "female_count" : 1722,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2009
   }, {
-    "male_count" : 8353,
-    "female_count" : 1924,
+    "male_count" : 8049,
+    "female_count" : 1845,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2010
   }, {
-    "male_count" : 8235,
-    "female_count" : 1852,
+    "male_count" : 8081,
+    "female_count" : 1813,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2011
@@ -132,20 +132,20 @@
     "csv_header" : null,
     "data_year" : 2016
   }, {
-    "male_count" : 3111,
+    "male_count" : 3113,
     "female_count" : 1033,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2017
   }, {
     "male_count" : 2931,
-    "female_count" : 1229,
+    "female_count" : 1230,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2018
   }, {
-    "male_count" : 2152,
-    "female_count" : 783,
+    "male_count" : 2375,
+    "female_count" : 880,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2019

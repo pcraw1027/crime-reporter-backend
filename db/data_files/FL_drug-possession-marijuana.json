@@ -1,0 +1,27 @@
+{
+  "results" : [ {
+    "male_count" : 27306,
+    "female_count" : 4001,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 1995
+  }, {
+    "male_count" : 106,
+    "female_count" : 29,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2017
+  }, {
+    "male_count" : 62,
+    "female_count" : 12,
+    "unknown_count" : 0,
+    "csv_header" : null,
+    "data_year" : 2019
+  } ],
+  "pagination" : {
+    "count" : 3,
+    "page" : 0,
+    "pages" : 1,
+    "per_page" : 0
+  }
+}

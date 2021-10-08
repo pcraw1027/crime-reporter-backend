@@ -18,56 +18,56 @@
     "csv_header" : null,
     "data_year" : 1997
   }, {
-    "male_count" : 1425,
-    "female_count" : 269,
+    "male_count" : 1419,
+    "female_count" : 268,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1998
   }, {
-    "male_count" : 1477,
-    "female_count" : 302,
+    "male_count" : 1259,
+    "female_count" : 255,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 1999
   }, {
-    "male_count" : 1220,
-    "female_count" : 287,
+    "male_count" : 985,
+    "female_count" : 226,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2000
   }, {
-    "male_count" : 796,
-    "female_count" : 179,
+    "male_count" : 688,
+    "female_count" : 155,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2001
   }, {
-    "male_count" : 735,
-    "female_count" : 208,
+    "male_count" : 488,
+    "female_count" : 147,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2002
   }, {
-    "male_count" : 807,
-    "female_count" : 196,
+    "male_count" : 532,
+    "female_count" : 132,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2003
   }, {
-    "male_count" : 1078,
-    "female_count" : 205,
+    "male_count" : 805,
+    "female_count" : 177,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2004
   }, {
-    "male_count" : 1226,
-    "female_count" : 294,
+    "male_count" : 990,
+    "female_count" : 243,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2005
   }, {
-    "male_count" : 1533,
-    "female_count" : 335,
+    "male_count" : 1264,
+    "female_count" : 289,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2006
@@ -132,20 +132,20 @@
     "csv_header" : null,
     "data_year" : 2016
   }, {
-    "male_count" : 696,
+    "male_count" : 697,
     "female_count" : 265,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2017
   }, {
-    "male_count" : 739,
+    "male_count" : 741,
     "female_count" : 273,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2018
   }, {
-    "male_count" : 655,
-    "female_count" : 260,
+    "male_count" : 686,
+    "female_count" : 269,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2019

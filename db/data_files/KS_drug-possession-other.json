@@ -90,8 +90,8 @@
     "csv_header" : null,
     "data_year" : 2014
   }, {
-    "male_count" : 1249,
-    "female_count" : 488,
+    "male_count" : 1242,
+    "female_count" : 485,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2015
@@ -114,8 +114,8 @@
     "csv_header" : null,
     "data_year" : 2018
   }, {
-    "male_count" : 2076,
-    "female_count" : 1022,
+    "male_count" : 2177,
+    "female_count" : 1066,
     "unknown_count" : 0,
     "csv_header" : null,
     "data_year" : 2019
